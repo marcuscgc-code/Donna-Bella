@@ -1,0 +1,13 @@
+{
+  "slug": "conjunto-linho",
+  "name": "Conjunto Linho Areia",
+  "price": 349.9,
+  "description": "Conjunto de blazer e calça em linho, corte reto e alfaiataria leve. Ideal para looks de trabalho elegantes.",
+  "category": "Conjuntos",
+  "color": "Bege",
+  "sizes": ["36", "38", "40"],
+  "tags": ["casual"],
+  "images": ["/imagens/produtos/conjunto-linho-1.svg", "/imagens/produtos/conjunto-linho-2.svg"],
+  "featured": true,
+  "promotion": false
+}

@@ -1,0 +1,13 @@
+{
+  "slug": "saia-midi",
+  "name": "Saia Midi Plissada",
+  "price": 229.9,
+  "description": "Saia midi plissada em tecido leve, cintura alta e caimento fluido em movimento.",
+  "category": "Saias",
+  "color": "Terracota",
+  "sizes": ["P", "M", "G"],
+  "tags": ["verão", "casual"],
+  "images": ["/imagens/produtos/saia-midi-1.svg", "/imagens/produtos/saia-midi-2.svg"],
+  "featured": false,
+  "promotion": true
+}

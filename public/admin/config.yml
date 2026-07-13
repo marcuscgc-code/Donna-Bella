@@ -1,0 +1,88 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "public/imagens/produtos"
+public_folder: "/imagens/produtos"
+
+collections:
+  - name: "produtos"
+    label: "Produtos"
+    label_singular: "Produto"
+    folder: "content/produtos"
+    create: true
+    delete: true
+    slug: "{{slug}}"
+    identifier_field: "name"
+    summary: "{{name}} — {{color}} — R$ {{price}}"
+    # Campos mais usados primeiro: nome, preço, foto, cor e tamanho.
+    fields:
+      - { label: "Nome", name: "name", widget: "string" }
+      - { label: "Preço (R$)", name: "price", widget: "number", value_type: "float" }
+      - label: "Fotos"
+        name: "images"
+        widget: "list"
+        summary: "{{fields.image}}"
+        field: { label: "Foto", name: "image", widget: "image", media_library: { config: { multiple: true } } }
+      - label: "Cor"
+        name: "color"
+        widget: "relation"
+        collection: "cores"
+        search_fields: ["nome"]
+        display_fields: ["nome"]
+        value_field: "nome"
+        hint: "Escolha entre as cores já cadastradas na coleção \"Cores\". Para adicionar uma cor nova, cadastre primeiro em Cores."
+      - label: "Tamanhos disponíveis"
+        name: "sizes"
+        widget: "select"
+        multiple: true
+        options: ["PP", "P", "M", "G", "GG", "36", "38", "40", "42", "44"]
+
+      - label: "Slug (URL da peça)"
+        name: "slug"
+        widget: "string"
+        hint: "Ex.: vestido-terracota — sem espaços ou acentos"
+      - { label: "Descrição", name: "description", widget: "text" }
+      - label: "Categoria"
+        name: "category"
+        widget: "select"
+        options: ["Vestidos", "Conjuntos", "Blusas", "Saias"]
+      - label: "Tags (opcional)"
+        name: "tags"
+        widget: "select"
+        multiple: true
+        required: false
+        options: ["verão", "inverno", "festa", "casual", "trabalho"]
+      - { label: "Destaque na Home", name: "featured", widget: "boolean", default: false }
+      - { label: "Em promoção", name: "promotion", widget: "boolean", default: false }
+
+  - name: "cores"
+    label: "Cores"
+    label_singular: "Cor"
+    description: "Cores disponíveis para os produtos. Cadastre aqui antes de usar em um produto."
+    folder: "content/cores"
+    create: true
+    delete: true
+    slug: "{{nome}}"
+    identifier_field: "nome"
+    summary: "{{nome}}"
+    fields:
+      - { label: "Nome", name: "nome", widget: "string" }
+      - { label: "Cor (hex)", name: "hex", widget: "color" }
+
+  - name: "configuracoes"
+    label: "Configurações da Loja"
+    files:
+      - name: "loja"
+        label: "Dados da Loja"
+        file: "content/loja.json"
+        fields:
+          - { label: "Nome da loja", name: "storeName", widget: "string" }
+          - { label: "Slogan", name: "tagline", widget: "string" }
+          - { label: "Nome da proprietária", name: "ownerName", widget: "string" }
+          - { label: "WhatsApp (só números, com DDI+DDD)", name: "whatsappNumber", widget: "string" }
+          - { label: "Instagram (link completo)", name: "instagram", widget: "string" }
+          - { label: "Endereço", name: "address", widget: "string" }
+          - { label: "Imagem do banner principal", name: "heroImage", widget: "image" }
+          - { label: "Título do banner", name: "heroTitle", widget: "string" }
+          - { label: "Subtítulo do banner", name: "heroSubtitle", widget: "text" }

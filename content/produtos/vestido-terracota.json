@@ -1,0 +1,13 @@
+{
+  "slug": "vestido-terracota",
+  "name": "Vestido Terracota Midi",
+  "price": 289.9,
+  "description": "Vestido midi em tecido fluido, caimento leve e decote em V. Peça versátil, perfeita do dia à noite.",
+  "category": "Vestidos",
+  "color": "Terracota",
+  "sizes": ["P", "M", "G"],
+  "tags": ["festa", "verão"],
+  "images": ["/imagens/produtos/vestido-terracota-1.svg", "/imagens/produtos/vestido-terracota-2.svg"],
+  "featured": true,
+  "promotion": false
+}

@@ -1,0 +1,13 @@
+{
+  "slug": "blusa-seda",
+  "name": "Blusa de Seda Nude",
+  "price": 199.9,
+  "description": "Blusa em seda com caimento fluido e botões forrados. Textura leve e brilho suave.",
+  "category": "Blusas",
+  "color": "Nude",
+  "sizes": ["P", "M", "G"],
+  "tags": ["casual", "trabalho"],
+  "images": ["/imagens/produtos/blusa-seda-1.svg", "/imagens/produtos/blusa-seda-2.svg"],
+  "featured": true,
+  "promotion": false
+}
