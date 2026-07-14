@@ -17,7 +17,7 @@ export function buildOrderMessage(
     ].join("\n");
   });
 
-  const lines = [
+  return [
     "Olá, senhora Enedina! 😊",
     "",
     "Gostaria de finalizar o seguinte pedido:",
@@ -30,12 +30,10 @@ export function buildOrderMessage(
     `💳 *TOTAL DO PEDIDO: ${formatPrice(total)}*`,
     "━━━━━━━━━━━━━━━━━━",
     "",
-    "Poderia, por gentileza, confirmar a disponibilidade dos produtos e me informar as formas de pagamento e entrega?",
+    "Poderia, por gentileza, confirmar a disponibilidade dos produtos e informar as formas de pagamento e entrega?",
     "",
     "Aguardo seu retorno. Obrigado(a)! 💕",
-  ];
-
-  return lines.join("\n");
+  ].join("\n");
 }
 
 export function buildWhatsappUrl(
