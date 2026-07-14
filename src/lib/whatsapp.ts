@@ -10,29 +10,29 @@ export function buildOrderMessage(
 
     return [
       `*${index + 1}. ${item.name}*`,
-      `🎨 Cor: ${item.color}`,
-      `📏 Tamanho: ${item.size}`,
-      `📦 Quantidade: ${item.quantity}`,
-      `💰 Subtotal: ${subtotal}`,
+      `● Cor: ${item.color}`,
+      `● Tamanho: ${item.size}`,
+      `● Quantidade: ${item.quantity}`,
+      `● Subtotal: ${subtotal}`,
     ].join("\n");
   });
 
   return [
-    "Olá, senhora Enedina! 😊",
+    "Olá, senhora Enedina! ☺",
     "",
     "Gostaria de finalizar o seguinte pedido:",
     "",
-    "🛍️ *RESUMO DO PEDIDO*",
+    "★ *RESUMO DO PEDIDO*",
     "",
     productLines.join("\n\n"),
     "",
     "━━━━━━━━━━━━━━━━━━",
-    `💳 *TOTAL DO PEDIDO: ${formatPrice(total)}*`,
+    `★ *TOTAL DO PEDIDO: ${formatPrice(total)}*`,
     "━━━━━━━━━━━━━━━━━━",
     "",
     "Poderia, por gentileza, confirmar a disponibilidade dos produtos e informar as formas de pagamento e entrega?",
     "",
-    "Aguardo seu retorno. Obrigado(a)! 💕",
+    "Aguardo seu retorno. Obrigado(a)! ♥",
   ].join("\n");
 }
 
