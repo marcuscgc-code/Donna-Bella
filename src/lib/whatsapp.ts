@@ -1,20 +1,46 @@
 import type { CartItem } from "@/lib/cart-context";
 import { formatPrice } from "@/lib/format";
 
-export function buildOrderMessage(items: CartItem[], total: number): string {
+export function buildOrderMessage(
+  items: CartItem[],
+  total: number
+): string {
+  const productLines = items.map((item, index) => {
+    const subtotal = formatPrice(item.price * item.quantity);
+
+    return [
+      `*${index + 1}. ${item.name}*`,
+      `🎨 Cor: ${item.color}`,
+      `📏 Tamanho: ${item.size}`,
+      `📦 Quantidade: ${item.quantity}`,
+      `💰 Subtotal: ${subtotal}`,
+    ].join("\n");
+  });
+
   const lines = [
-    "Olá! Gostaria de finalizar este pedido:",
+    "Olá, senhora Enedina! 😊",
     "",
-    ...items.map((item) => {
-      const subtotal = formatPrice(item.price * item.quantity);
-      return `• ${item.name} — Cor: ${item.color}, Tamanho: ${item.size}, Qtd: ${item.quantity} — ${subtotal}`;
-    }),
+    "Gostaria de finalizar o seguinte pedido:",
     "",
-    `Total: ${formatPrice(total)}`,
+    "🛍️ *RESUMO DO PEDIDO*",
+    "",
+    productLines.join("\n\n"),
+    "",
+    "━━━━━━━━━━━━━━━━━━",
+    `💳 *TOTAL DO PEDIDO: ${formatPrice(total)}*`,
+    "━━━━━━━━━━━━━━━━━━",
+    "",
+    "Poderia, por gentileza, confirmar a disponibilidade dos produtos e me informar as formas de pagamento e entrega?",
+    "",
+    "Aguardo seu retorno. Obrigado(a)! 💕",
   ];
+
   return lines.join("\n");
 }
 
-export function buildWhatsappUrl(whatsappNumber: string, message: string): string {
+export function buildWhatsappUrl(
+  whatsappNumber: string,
+  message: string
+): string {
   return `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
 }
