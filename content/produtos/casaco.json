@@ -1,0 +1,13 @@
+{
+  "slug": "casaco-preto",
+  "name": "Casaco",
+  "price": 200,
+  "description": "Casaco bonito",
+  "category": "Blusas",
+  "color": "Amarelo",
+  "sizes": ["M"],
+  "tags": ["inverno"],
+  "images": ["/imagens/produtos/casaco.webp"],
+  "featured": true,
+  "promotion": false
+}

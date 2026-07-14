@@ -25,7 +25,7 @@ collections:
         name: "images"
         widget: "list"
         summary: "{{fields.image}}"
-        field: { label: "Foto", name: "image", widget: "image", media_library: { config: { multiple: true } } }
+        field: { label: "Foto", name: "image", widget: "image" }
       - label: "Cor"
         name: "color"
         widget: "relation"
