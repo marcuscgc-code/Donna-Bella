@@ -1,0 +1,19 @@
+{
+  "promotion": true,
+  "color": "Cinza",
+  "price": 200,
+  "name": "vestido algodao",
+  "slug": "vestido-algodao",
+  "featured": false,
+  "sizes": [
+    "38"
+  ],
+  "images": [
+    "/imagens/produtos/vestido-algodao.webp"
+  ],
+  "tags": [
+    "inverno"
+  ],
+  "description": "vestido feito por the rock",
+  "category": "Vestidos"
+}
